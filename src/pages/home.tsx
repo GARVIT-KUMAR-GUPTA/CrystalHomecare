@@ -2,8 +2,6 @@ import Navbar from "@/components/navbar";
 import HeroSection from "@/components/hero-section";
 import ServicesSection from "@/components/services-section";
 import AboutSection from "@/components/about-section";
-import PhotoGallery from "@/components/photo-gallery";
-import Testimonials from "@/components/testimonials";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 
@@ -13,17 +11,9 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
-        <div className="bg-muted/50">
-          <ServicesSection />
-        </div>
+        <ServicesSection />
         <AboutSection />
-        <div className="bg-muted/50">
-          <PhotoGallery />
-        </div>
-        <Testimonials />
-        <div className="bg-muted/50">
-          <ContactSection />
-        </div>
+        <ContactSection />
       </main>
       <Footer />
     </div>
