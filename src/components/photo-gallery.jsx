@@ -4,7 +4,7 @@ import img1 from "../assets/img1.jpg"
 const photos = [
   {
     url: "https://images.unsplash.com/photo-1612776572997-76cc42e058c3",
-    title: "Professional Care",
+    title: "Professional Carecdc",
     description: "Our staff providing dedicated care"
   },
   {

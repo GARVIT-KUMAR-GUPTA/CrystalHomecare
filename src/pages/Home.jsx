@@ -20,7 +20,7 @@ export default function Home() {
         <div className="bg-muted/50">
           <PhotoGallery />
         </div>
-        {/* <Testimonials /> */}
+      <Testimonials /> 
         <div className="bg-muted/50">
           <ContactSection />
         </div>

@@ -74,7 +74,7 @@ export function ConsultationDialog() {
       <DialogTrigger asChild>
         <Button size="lg">Schedule Consultation</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] max-h-[100vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Schedule a Consultation</DialogTitle>
           <DialogDescription>
