@@ -16,7 +16,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Logo & About */}
           <div>
-            <h3 className="text-3xl font-bold mb-4 text-primary">Crystal Care</h3>
+            <h3 className="text-3xl font-bold mb-4 text-primary">Crystal Home Care</h3>
             <p className="text-gray-400">
               Dedicated to providing top-notch home care services, ensuring comfort, safety, and well-being for your loved ones.
             </p>

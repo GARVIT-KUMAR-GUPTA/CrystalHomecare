@@ -8,7 +8,7 @@ export function Logo() {
          
        
       {/* <Heart className="h-6 w-6 text-primary" /> */}
-      <span className="text-2xl font-bold text-primary">Crystal HomeCare</span>
+      <span className="text-2xl font-bold text-primary">Crystal Home Care</span>
     </div>
   );
 }

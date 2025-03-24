@@ -8,7 +8,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <Link href="/">
-              <a className="text-2xl font-bold text-primary">Crystal Care</a>
+              <a className="text-2xl font-bold text-primary">Crystal Home 
+                Care</a>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               Professional home care services providing compassionate care for your loved ones.
@@ -58,7 +59,7 @@ export default function Footer() {
               <Linkedin className="h-5 w-5" />
             </a>
           </div>
-          <p>&copy; {new Date().getFullYear()} Crystal Care. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Crystal Home Care. All rights reserved.</p>
         </div>
       </div>
     </footer>
