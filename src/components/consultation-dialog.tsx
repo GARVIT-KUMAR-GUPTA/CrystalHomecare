@@ -51,24 +51,7 @@ export function ConsultationDialog() {
     },
   });
 
-  const onSubmit = async (data: ConsultationForm) => {
-    try {
-      //await sendConsultationEmail(data);
-      toast({
-        title: "Consultation Scheduled",
-        description: "We'll contact you shortly to confirm your appointment.",
-      });
-      setOpen(false);
-      form.reset();
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to schedule consultation. Please try again.",
-        variant: "destructive",
-      });
-    }
-  };
-
+ 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
@@ -88,7 +71,7 @@ export function ConsultationDialog() {
   {/* Scrollable Form */}
   <div className="overflow-y-auto flex-1 p-4">
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+      <form  className="space-y-4">
         {/* Form Fields */}
         <FormField
           control={form.control}
