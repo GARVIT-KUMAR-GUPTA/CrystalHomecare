@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <Link href="/">
-              <a className="text-2xl font-bold text-primary">Crystal Home Care</a>
+              <a className="text-2xl font-bold text-primary">Crystal Care</a>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               Professional home care services providing compassionate care for your loved ones.
@@ -43,7 +44,21 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Crystal Home Care. All rights reserved.</p>
+          <div className="flex justify-center space-x-6 mb-4">
+            <a href="#" className="text-[#1877F2] hover:opacity-80 transition-opacity">
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a href="#" className="text-[#1DA1F2] hover:opacity-80 transition-opacity">
+              <Twitter className="h-5 w-5" />
+            </a>
+            <a href="#" className="text-[#E4405F] hover:opacity-80 transition-opacity">
+              <Instagram className="h-5 w-5" />
+            </a>
+            <a href="#" className="text-[#0A66C2] hover:opacity-80 transition-opacity">
+              <Linkedin className="h-5 w-5" />
+            </a>
+          </div>
+          <p>&copy; {new Date().getFullYear()} Crystal Care. All rights reserved.</p>
         </div>
       </div>
     </footer>

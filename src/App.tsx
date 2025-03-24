@@ -4,12 +4,14 @@ import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/home";
+import { WhatsAppButton } from "@/components/whatsapp-button";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route component={NotFound} />
+
     </Switch>
   );
 }
@@ -19,6 +21,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <Router />
       <Toaster />
+      <WhatsAppButton />
     </QueryClientProvider>
   );
 }

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+//import { sendConsultationEmail } from "@/utils/email";
 import {
   Dialog,
   DialogContent,
@@ -50,15 +51,22 @@ export function ConsultationDialog() {
     },
   });
 
-  const onSubmit = (data: ConsultationForm) => {
-    // Here you would typically send this data to your backend
-    console.log(data);
-    toast({
-      title: "Consultation Scheduled",
-      description: "We'll contact you shortly to confirm your appointment.",
-    });
-    setOpen(false);
-    form.reset();
+  const onSubmit = async (data: ConsultationForm) => {
+    try {
+      //await sendConsultationEmail(data);
+      toast({
+        title: "Consultation Scheduled",
+        description: "We'll contact you shortly to confirm your appointment.",
+      });
+      setOpen(false);
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to schedule consultation. Please try again.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -66,7 +74,109 @@ export function ConsultationDialog() {
       <DialogTrigger asChild>
         <Button size="lg">Schedule Consultation</Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[425px]">
+      <DialogContent className="sm:max-w-[425px] max-h-[100vh] flex flex-col">
+  {/* Sticky Header */}
+  <div className="sticky top-0 bg-white z-10 p-4 border-b">
+    <DialogHeader>
+      <DialogTitle>Schedule a Consultation</DialogTitle>
+      <DialogDescription>
+        Fill out the form below to schedule a consultation with our care team.
+      </DialogDescription>
+    </DialogHeader>
+  </div>
+
+  {/* Scrollable Form */}
+  <div className="overflow-y-auto flex-1 p-4">
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        {/* Form Fields */}
+        <FormField
+          control={form.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Name</FormLabel>
+              <FormControl>
+                <Input placeholder="John Doe" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <Input type="email" placeholder="john@example.com" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="phone"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Phone</FormLabel>
+              <FormControl>
+                <Input type="tel" placeholder="(555) 123-4567" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <div className="grid grid-cols-2 gap-4">
+          <FormField
+            control={form.control}
+            name="date"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Preferred Date</FormLabel>
+                <FormControl>
+                  <Input type="date" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="time"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Preferred Time</FormLabel>
+                <FormControl>
+                  <Input type="time" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
+        <FormField
+          control={form.control}
+          name="message"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Additional Notes</FormLabel>
+              <FormControl>
+                <Textarea placeholder="Any specific requirements or concerns..." {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit" className="w-full">Submit Request</Button>
+      </form>
+    </Form>
+  </div>
+</DialogContent>
+
+      {/* <DialogContent className="sm:max-w-[425px] max-h-[100vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Schedule a Consultation</DialogTitle>
           <DialogDescription>
@@ -158,7 +268,7 @@ export function ConsultationDialog() {
             <Button type="submit" className="w-full">Submit Request</Button>
           </form>
         </Form>
-      </DialogContent>
+      </DialogContent> */}
     </Dialog>
   );
 }
