@@ -18,11 +18,11 @@ export default function Home() {
         </div>
         <AboutSection />
         <div className="bg-muted/50">
-          {/* <PhotoGallery /> */}
+          <PhotoGallery />
         </div>
         {/* <Testimonials /> */}
         <div className="bg-muted/50">
-          {/* <ContactSection /> */}
+          <ContactSection />
         </div>
       </main>
       <Footer />
