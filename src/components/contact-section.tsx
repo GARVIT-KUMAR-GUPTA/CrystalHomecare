@@ -190,7 +190,7 @@ export default function ContactSection() {
                 <div>
                   <div className="font-medium">Email</div>
                   <a href="mailto:crystakhomecareservicesjpr@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition">
-                  crystakhomecareservicesjpr@gmail.com
+                  crystalhomecareservicesjpr@gmail.com
                   </a>
                 </div>
               </CardContent>

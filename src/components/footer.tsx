@@ -52,7 +52,7 @@ export default function Footer() {
             <a href="#" className="text-[#1DA1F2] hover:opacity-80 transition-opacity">
               <Twitter className="h-5 w-5" />
             </a>
-            <a href="#" className="text-[#E4405F] hover:opacity-80 transition-opacity">
+            <a target="_blank" href="https://www.instagram.com/crystal_homecare_services_jpr/?utm_source=qr&igsh=MXRrY3BrdDYwaTBpaQ%3D%3D#" className="text-[#E4405F] hover:opacity-80 transition-opacity">
               <Instagram className="h-5 w-5" />
             </a>
             <a href="#" className="text-[#0A66C2] hover:opacity-80 transition-opacity">
